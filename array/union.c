@@ -59,7 +59,7 @@ void make_union(int arr1[], int arr2[], int m, int n) {
      m = remove_duplications(arr1, m);
      n = remove_duplications(arr2, m);
 
-     // copy array 1 in temp
+     // copy array 1 in union array
      for(i=0;i<m;i++) {
         uarr[i] = arr1[i];
         uidx++;
@@ -71,14 +71,14 @@ void make_union(int arr1[], int arr2[], int m, int n) {
         for(i=0;i<m;i++) {
            if(arr1[i] != arr2[j] && found != 1) {
               uarr[uidx] = arr2[j];
-              uidx++;
               found = 1;
+              uidx++;
            }
         }
      }
 
      // finally print the union
-     for(j=0;j<i;j++) {
+     for(j=0;j<uidx;j++) {
         printf("%d ", uarr[j]);
      }
 }
